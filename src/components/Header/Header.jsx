@@ -6,6 +6,20 @@ import "../../styles/header.css";
 import swal from "sweetalert";
 import { AuthContext } from "../../context/AuthContext";
 
+// fetch('http://localhost:5000/api/route', {
+//     method: 'GET',  // Or 'POST', 'PUT', etc.
+//     headers: {
+//         'Content-Type': 'application/json',  // Adjust as needed
+//         // Other headers from your React app
+//     },
+// })
+// .then(response => response.json())
+// .then(data => {
+//     // Handle data
+// })
+// .catch(error => {
+//     // Handle error
+// });
 
 const navLinks = [
   {
@@ -15,6 +29,7 @@ const navLinks = [
   {
     path: "/about",
     display: "About",
+    
   },
   {
     path: "/equipments",
@@ -26,8 +41,24 @@ const navLinks = [
     display: "Contact",
   },
 
+  {
+
+    path: "/crop",
+    display: "Crop",
+    
+    
+  },
+
+  {
+    path: "/fertilizer",
+    display: "Fertilizer",
+  },
+
   
 ];
+
+
+
 
 
 const handleLogin=()=>{
@@ -127,14 +158,15 @@ const Header = () => {
         <Container>
           <Row>
             <Col lg="4" md="3" sm="4">
-              <div className="logo">
+              <div className="logo1" >
+                {/* <img src="./src/components/Header/logo192.png" alt="kisan sathi" /> */}
+                <Link to="/home" className=" d-flex align-items-center gap-2">
+
+                <img src={require('/home/sanjay/Documents/Working/Coding/farmer/kisan-sathi/src/components/Header/logo192.png')} alt="kisan sathi" style={{ width: '250px', height: 'auto' }} />
+                </Link>
                 <h1 style={logoStyleh1}>
                   <Link to="/home" className=" d-flex align-items-center gap-2">
-                    <i  class="ri-car-line"></i>
-                    <h1 style={{fontSize:'1.4rem',fontWeight:'bold', padding:'2px 4px',color:"#000d6b" }}> Rent Farming Equipment <br/> Services</h1>
-                    {/* <span style={logoSpan}>
-                      Rent Farming Equipment <br /> Service
-                    </span> */}
+                    
                   </Link>
                 </h1>
               </div>
@@ -205,7 +237,7 @@ const Header = () => {
               </div>
             </div>
 
-            {/* <div className="nav__right">
+            {/* {/* {/* <div className="nav__right">
               <div className="search__box">
                 <input type="text" placeholder="Search" />
                 <span>
@@ -213,7 +245,20 @@ const Header = () => {
                 </span>
               </div>
             </div> */}
-          </div>
+           
+          <div className="logo2" id="mobileshow">
+                {/* <img src="./src/components/Header/logo192.png" alt="kisan sathi" /> */}
+                <Link to="/home" className=" d-flex align-items-center gap-2">
+
+                <img src={require('/home/sanjay/Documents/Working/Coding/farmer/kisan-sathi/src/components/Header/logo192.png')} alt="kisan sathi" style={{ width: '184px', height: 'auto', marginRight: '100px' }} />
+                </Link>
+                <h1 style={logoStyleh1}>
+                  <Link to="/home" className=" d-flex align-items-center gap-2">
+                    
+                  </Link>
+                </h1>
+              </div>
+              </div> 
         </Container>
       </div>
     </header>

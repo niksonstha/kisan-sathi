@@ -48,7 +48,37 @@ const Title = styled.h1`
 
 
 
-
+const payment_K = {
+  "return_url": "https://localhost:3000/payment/",
+  "website_url": "https://localhost:3000/",
+  "amount": 1300,
+  "purchase_order_id": "test12",
+  "purchase_order_name": "test",
+  "customer_info": {
+      "name": "Ashim Upadhaya",
+      "email": "example@gmail.com",
+      "phone": "9811496763"
+  },
+  "amount_breakdown": [
+      {
+          "label": "Mark Price",
+          "amount": 1000
+      },
+      {
+          "label": "VAT",
+          "amount": 300
+      }
+  ],
+  "product_details": [
+      {
+          "identity": "1234567890",
+          "name": "Khalti logo",
+          "total_price": 1300,
+          "quantity": 1,
+   "unit_price": 1300
+      }
+  ]
+}
 const BButton = styled.button`
     ${'' /* width: 80%;
     height: 50px;
@@ -221,7 +251,7 @@ const Checkout=()=>{
       
         
          </div>
-               
+              
        </Wrapper>
 
 
@@ -242,6 +272,10 @@ const Checkout=()=>{
       }}>
            Please Click on button below !!
       </h3>
+      
+
+
+      
 
 
    
@@ -253,6 +287,7 @@ const Checkout=()=>{
         billingAddress
         shippingAddress
         onClick={()=>setBillChargeModal(false)}
+        
       />
 
       

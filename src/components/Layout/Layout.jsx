@@ -17,3 +17,11 @@ const Layout = () => {
 };
 
 export default Layout;
+fetch('http://localhost:5000/api/data')
+  .then(response => response.json())
+  .then(data => {
+    // Process the data from the Flask API
+  })
+  .catch(error => {
+    // Handle error
+  });

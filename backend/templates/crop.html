@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Kisan Sathi">
+    <meta name="author" content="Sanjay Thapa">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Crop Recommendation</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <script src="templates/main.js"></script>
+    <script>
+        const express = require('express');
+const cors = require('cors');
+
+const app = express();
+app.use(cors({
+    origin: 'http://localhost:3000', // Replace with your frontend's origin
+    credentials: true, // Allow cookies, authentication, etc.
+}));
+
+// ... other server code ...
+
+    </script>
+</head>
+<body>
+    <!-- <nav class="navbar navbar-dark bg-primary">
+        <a href="{{ url_for('index') }}">
+            <h1>Harvest Nepal</h1>
+          </a>
+        
+        <ul>
+            <li><a href="{{ url_for('about_us') }}">About us</a></li>
+            <li><a href="{{ url_for('crop') }}">Crop</a></li>
+            <li><a href="{{ url_for('fertilizer') }}">Fertilizer</a></li>
+        </ul>
+    </nav> -->
+    <div class="container">
+    <h1 class="text-danger text-center">Crop Recommendation System</h1>
+    </div>
+    <div class="container">
+        <form id="crop-form" action="{{ url_for('crop_prediction') }}" method="post">
+            <div class="form-group">
+                <label class="text-primary">Nitrogen</label>
+                <input type="number" class="form-control small-input" name="nitrogen" placeholder="Enter nitrogen value(0-140) " min=0 max=140 required>
+            </div>
+            <div class="form-group">
+                <label class="text-primary">Phosphorous</label>
+                <input type="number" class="form-control small-input" name="phosphorous" placeholder="Enter phosphorous value(5-145) " min=5 max=145 required>
+            </div>
+            <div class="form-group">
+                <label class="text-primary">Potassium</label>
+                <input type="number" class="form-control small-input " name="potassium" placeholder="Enter potassium value(5-205) " min=5 max=205 required>
+            </div> 
+            <div class="form-group">
+                <label class="text-primary">Temperature</label>
+                <input type="number" class="form-control small-input " name="temperature" placeholder="Enter temperature value(8-43) " min=8 max=43 required>
+            </div>
+            <div class="form-group">
+                <label class="text-primary">Humidity</label>
+                <input type="number" class="form-control small-input " name="humidity" placeholder="Enter humidity value(14-99) " min=14 max=99 required>
+            </div>
+             <div class="form-group">
+                <label class="text-primary">Rainfall</label>
+                <input type="number" class="form-control small-input " name="rainfall" placeholder="Enter rainfall value(20-298)" min=20 max=298 required>
+            </div>
+            <div class="form-group">
+                <label class="text-primary">PH</label>
+                <input type="number" class="form-control small-input " name="ph value" placeholder="Enter ph value(3-9) " min=3  max=9 required>
+            </div>
+            <button type="submit" value="Submit" class="btn btn-success">Predict</button>
+        </form>
+        <br>
+        {{ prediction_text }}
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

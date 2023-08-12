@@ -8,6 +8,7 @@ import Blog from "../pages/Blog";
 import BlogDetails from "../pages/BlogDetails";
 import NotFound from "../pages/NotFound";
 import Contact from "../pages/Contact";
+import Crop from "../pages/Crop";
 import Login from '../pages/Login';
 import Register from '../pages/Register';
 import BecomeDriver from '../pages/BecomeDriver'
@@ -28,6 +29,7 @@ const Routers = () => {
       <Route path="/blogs" element={<Blog />} />
       <Route path="/blogs/:idd" element={<BlogDetails />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/Crop" element={<Crop />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register/>} />
       <Route path="/onrent" element={<OnRent inputs={Inputs}/>} />

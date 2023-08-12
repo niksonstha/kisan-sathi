@@ -6,6 +6,23 @@
   color: #fff;
 }
 
+#mobileshow    { display:block; }
+
+@media screen and (min-width: 500px) {
+    #mobileshow   { display:none; }
+}
+
+.logo1 img {
+  max-width: 100%;
+  height: auto;
+  @media (max-width: 768px) {
+    .logo1 img {
+      max-width: 80% !important;
+    }
+  }
+  
+}
+
 .header__top__left {
   display: flex;
   align-items: center-start;
