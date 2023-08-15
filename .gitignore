@@ -5,6 +5,14 @@
 /.pnp
 .pnp.js
 
+*.Cython linguist-detectable=false
+*.C linguist-detectable=false
+*.C++ linguist-detectable=false
+*.Fortran linguist-detectable=false
+
+
+*.js linguist-detectable=true
+
 # testing
 /coverage
 
