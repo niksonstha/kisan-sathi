@@ -3,3 +3,4 @@
 *.C++ linguist-detectable=false
 *.Fortran linguist-detectable=false
 *.Cython linguist-vendored
+*.Cython linguist-language=Cython
