@@ -1,0 +1,34 @@
+/* Apply some basic styling to the table */
+#data-table {
+    width: 70%;
+    border-collapse: collapse;
+    border: 1px solid #e2e8f0;
+    margin-left: 350px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  
+  /* Apply background color to the table header */
+  #data-table thead {
+    background-color: #f7fafc;
+  }
+  
+  h1 {
+    text-align: center; /* Align the heading in the center */
+    font-weight: bold; /* Make the heading bold */
+    margin: 0 auto;
+
+  }
+
+  /* Apply padding and border to table cells */
+  #data-table th,
+  #data-table td {
+    padding: 0.5rem 1rem;
+    border: 1px solid #e2e8f0;
+  }
+  
+  /* Apply border to the top of table cells */
+  #data-table td {
+    border-top: 1px solid #e2e8f0;
+  }
+  

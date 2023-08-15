@@ -21,3 +21,36 @@
     font-size: 0.8rem;
   }
 }
+
+/* Add these styles to your CSS file */
+.iframe-container {
+  width: 80%; /* Adjust the width as needed */
+  height: 850px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.iframe-container1 {
+  width: 80%; /* Adjust the width as needed */
+  height: 1500px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.iframe-container2 {
+  width: 100%; /* Adjust the width as needed */
+  height: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.iframe-overlay {
+  width: 100%;
+  height: 100%;
+}
+.iframe-content {
+  width: 100%;
+  height: 100%;
+}
+
+/* You can also adjust other styles for the iframe-overlay, iframe-header, iframe-footer, and close-button */

@@ -37,11 +37,6 @@ const navLinks = [
   },
 
   {
-    path: "/contact",
-    display: "Contact",
-  },
-
-  {
 
     path: "/crop",
     display: "Crop",
@@ -52,6 +47,19 @@ const navLinks = [
   {
     path: "/fertilizer",
     display: "Fertilizer",
+  },
+  {
+    path: "/Weather",
+    display: "Weather",
+  },
+
+  {
+    path: "/price",
+    display: "Price",
+  },
+  {
+    path: "/contact",
+    display: "Contact",
   },
 
   

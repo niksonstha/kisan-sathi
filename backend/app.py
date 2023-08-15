@@ -34,6 +34,10 @@ def crop():
 def fertilizer():
     return render_template("fertilizer.html")
 
+@app.route('/weather')
+def serve_frontend():
+    return render_template('/Weather/weather.html')
+
 @app.route("/crop_prediction", methods=["POST"])
 def crop_prediction():
         features = [int(x) for x in request.form.values()]

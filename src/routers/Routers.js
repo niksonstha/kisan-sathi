@@ -9,6 +9,9 @@ import BlogDetails from "../pages/BlogDetails";
 import NotFound from "../pages/NotFound";
 import Contact from "../pages/Contact";
 import Crop from "../pages/Crop";
+import Price from "../pages/price";
+import Fertilizer from "../pages/fertilizer";
+import Weather from "../pages/Weather";
 import Login from '../pages/Login';
 import Register from '../pages/Register';
 import BecomeDriver from '../pages/BecomeDriver'
@@ -30,6 +33,9 @@ const Routers = () => {
       <Route path="/blogs/:idd" element={<BlogDetails />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/Crop" element={<Crop />} />
+      <Route path="/price" element={<Price />} />
+      <Route path="/Fertilizer" element={<Fertilizer />} />
+      <Route path="/Weather" element={<Weather />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register/>} />
       <Route path="/onrent" element={<OnRent inputs={Inputs}/>} />
