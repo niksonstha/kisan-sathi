@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ChatGPT ChatBot with Gradio and OpenAI</title>
+</head>
+<body>
+	<div style="text-align: center;">
+		<h1>ChatGPT<br>ChatBot with Gradio and OpenAI</h1>
+	</div>
+	<div style="max-width: 600px; margin: auto; padding: 20px;">
+		<form id="chat-form">
+			<label for="user-input">Enter Your Query Here:</label>
+			<input type="text" id="user-input" name="user-input" style="width: 100%;" placeholder="Enter your query...">
+			<button type="button" id="send-button" style="margin-top: 10px;">SEND</button>
+		</form>
+		<div id="chat-history" style="margin-top: 20px; border: 1px solid #ccc; padding: 10px; max-height: 300px; overflow-y: auto;"></div>
+	</div>
+	<script>
+		const apiKey = "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";
+		const prompt = "Enter Your Query Here";
+
+		const chatForm = document.getElementById("chat-form");
+		const userInput = document.getElementById("user-input");
+		const sendButton = document.getElementById("send-button");
+		const chatHistory = document.getElementById("chat-history");
+
+		sendButton.addEventListener("click", () => {
+			const userMessage = userInput.value;
+			if (userMessage.trim() === "") return;
+
+			fetchApi(userMessage);
+			userInput.value = "";
+		});
+
+		function fetchApi(input) {
+			const formData = new FormData();
+			formData.append("prompt", input);
+
+			fetch("https://api.openai.com/v1/engines/text-davinci-003/completions", {
+				method: "POST",
+				headers: {
+					"Authorization": `Bearer ${apiKey}`
+				},
+				body: formData
+			})
+			.then(response => response.json())
+			.then(data => {
+				const message = data.choices[0].text;
+				appendChat(input, message);
+			})
+			.catch(error => {
+				console.error("Error:", error);
+			});
+		}
+
+		function appendChat(input, output) {
+			const chatEntry = document.createElement("div");
+			chatEntry.innerHTML = `<strong>You:</strong> ${input}<br><strong>ChatGPT:</strong> ${output}`;
+			chatHistory.appendChild(chatEntry);
+		}
+	</script>
+</body>
+</html>

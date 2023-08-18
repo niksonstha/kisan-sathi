@@ -1,12 +1,12 @@
 
 import 'antd/dist/antd.css'
 
-import {Modal } from "antd";
-import {db} from '../Config/Firebase';
-  import { collection, addDoc } from "firebase/firestore"; 
+import { Modal } from "antd";
+import { db } from '../Config/Firebase';
+import { collection, addDoc } from "firebase/firestore";
 import { doc, getDoc } from "firebase/firestore";
 import { useParams } from 'react-router-dom';
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import React from "react";
 import styled from "styled-components";
 // import { loadStripe } from "@stripe/stripe-js";
@@ -14,6 +14,7 @@ import StripeCheckout from "react-stripe-checkout";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import KhaltiCheckout from "khalti-checkout-web";
 
 const Container = styled.div`
   padding:0%;
@@ -55,28 +56,28 @@ const payment_K = {
   "purchase_order_id": "test12",
   "purchase_order_name": "test",
   "customer_info": {
-      "name": "Ashim Upadhaya",
-      "email": "example@gmail.com",
-      "phone": "9811496763"
+    "name": "Ashim Upadhaya",
+    "email": "example@gmail.com",
+    "phone": "9811496763"
   },
   "amount_breakdown": [
-      {
-          "label": "Mark Price",
-          "amount": 1000
-      },
-      {
-          "label": "VAT",
-          "amount": 300
-      }
+    {
+      "label": "Mark Price",
+      "amount": 1000
+    },
+    {
+      "label": "VAT",
+      "amount": 300
+    }
   ],
   "product_details": [
-      {
-          "identity": "1234567890",
-          "name": "Khalti logo",
-          "total_price": 1300,
-          "quantity": 1,
-   "unit_price": 1300
-      }
+    {
+      "identity": "1234567890",
+      "name": "Khalti logo",
+      "total_price": 1300,
+      "quantity": 1,
+      "unit_price": 1300
+    }
   ]
 }
 const BButton = styled.button`
@@ -101,7 +102,7 @@ const BButton = styled.button`
 `;
 
 
-const Input=styled.input`
+const Input = styled.input`
      ${'' /* border:none; */}
     height:0px;
    padding:20px
@@ -110,196 +111,181 @@ const Input=styled.input`
 
 
 
-  
-const Checkout=()=>{
+
+const Checkout = () => {
 
 
-   const {idd}=useParams();
-   console.log(idd);
+  const { idd } = useParams();
+  console.log(idd);
   // console.log(idd);
-      let arr=[];
-        const [billChargeModal, setBillChargeModal] = useState(false);
-      const [data,setData]=useState({})
-
- 
-          useEffect(() => {
-
-          // data=null;  
-         const fetchData= async () => {
-        try{
-             const docRef = doc(db, "users", idd);
-             const docSnap = await getDoc(docRef);
-
-              arr.push(docSnap.data())
-          
-                 
-               setData(docSnap.data());
-            //  } else {
-             
-                // console.log("No such document!");
-            // }   
-          }catch(err){
-              console.log(err)
-            }
-       }
-
-        fetchData();
-      },[])
+  let arr = [];
+  const [billChargeModal, setBillChargeModal] = useState(false);
+  const [data, setData] = useState({})
+  // const [buttonContent, setButtonContent] = useState('');
 
 
-         const name=data.displayName;
-        const Description= data.Description;
-        const price=data.Price;
-      
 
-        const product={
-            name:name,
-            Description:Description,
-            price:price
-        }
-    
-      const [formData,setFormdata]=useState({})
-    
-       const handleInput = (e) => {
-       const id = e.target.id;
-       const value = e.target.value;
+  useEffect(() => {
+
+    // data=null;  
+    const fetchData = async () => {
+      try {
+        const docRef = doc(db, "users", idd);
+        const docSnap = await getDoc(docRef);
+
+        arr.push(docSnap.data())
+
+
+        setData(docSnap.data());
+        //  } else {
+
+        // console.log("No such document!");
+        // }   
+      } catch (err) {
+        console.log(err)
+      }
+    }
+
+    fetchData();
+  }, [])
+
+
+  const name = data.displayName;
+  const Description = data.Description;
+  const price = data.Price;
+
+
+  const product = {
+    name: name,
+    Description: Description,
+    price: price
+  }
+
+  const [formData, setFormdata] = useState({})
+
+  const handleInput = (e) => {
+    const id = e.target.id;
+    const value = e.target.value;
 
     setFormdata({ ...formData, [id]: value });
     // console.log(formData);
 
 
-  
+
   };
-  
-   const addDetails=async()=>{
-     setBillChargeModal(true);
-     const docRef = await addDoc(collection(db, "orders"), {
-          formData
-       });
-     console.log("Document written with ID: ", docRef.id);
-   }
-     
-   async function handleToken(token, addresses) {
-    const response = await axios.post(process.env.REACT_APP_BACKEND_URL+"/checkout",{ token, product });
-    const { status } = response.data;
-    console.log("Response:", response.data);
-    if (status === "success") {
-      toast("Success! Check email for details", { type: "success" });
-    } else {
-      toast("Something went wrong", { type: "error" });
+
+  // const YourComponent = () => {
+  //   const config = {
+  //     // ... (your config object)
+  //   };
+
+  //   const checkout = new KhaltiCheckout(config);
+
+    // const handlePayment = () => {
+    //   checkout.show({ amount: 1000 });
+    // };
+
+
+    const addDetails = async () => {
+      setBillChargeModal(true);
+      const docRef = await addDoc(collection(db, "orders"), {
+        formData
+      });
+      console.log("Document written with ID: ", docRef.id);
     }
-  }
-    
-      return(
-  
-    
-    <Container>
-      
-       <Wrapper>
-           <Title style={{marginBottom:'0px'}}>Check Out Form</Title>
-            <div style={{margin:'10px'}} className='Form-inputs'>
-               <label >Full Name</label>
-              <Input onChange={handleInput}  id='name' placeholder='Full Name' ></Input>
 
-              <label style={{paddingTop:'10px'}}>Address</label>
-             <Input  onChange={handleInput} id='add' placeholder='Address'></Input>
+    async function handleToken(token, addresses) {
+      const response = await axios.post(process.env.REACT_APP_BACKEND_URL + "/checkout", { token, product });
+      const { status } = response.data;
+      console.log("Response:", response.data);
+      if (status === "success") {
+        toast("Success! Check email for details", { type: "success" });
+      } else {
+        toast("Something went wrong", { type: "error" });
+      }
+    }
 
-            
-               <label  style={{paddingTop:'10px'}}>Pincode</label>
-               <Input  onChange={handleInput} id='pin' placeholder='Pincode'></Input>
+    // useEffect(() => {
+    //   // Fetch the content from the "khalti.html" file
+    //   fetch('khalti.html')
+    //     .then(response => response.text())
+    //     .then(data => setButtonContent(data))
+    //     .catch(error => console.error('Error loading HTML:', error));
+    // }, []);
+
+    return (
+
+
+      <Container>
+
+        <Wrapper>
+          <Title style={{ marginBottom: '0px' }}>Check Out Form</Title>
+          <div style={{ margin: '10px' }} className='Form-inputs'>
+            <label >Full Name</label>
+            <Input onChange={handleInput} id='name' placeholder='Full Name' ></Input>
+
+            <label style={{ paddingTop: '10px' }}>Address</label>
+            <Input onChange={handleInput} id='add' placeholder='Address'></Input>
+
+
+            <label style={{ paddingTop: '10px' }}>Pincode</label>
+            <Input onChange={handleInput} id='pin' placeholder='Pincode'></Input>
 
 
 
-             <label style={{paddingTop:'10px'}}>No of days </label>
-            <Input   onChange={handleInput} id='days' placeholder='Number of days you want to rent the equipment'></Input>
+            <label style={{ paddingTop: '10px' }}>No of days </label>
+            <Input onChange={handleInput} id='days' placeholder='Number of days you want to rent the equipment'></Input>
             {/* {`/equipments/${id}`} */}
-            
+
             <div style=
               {{
-                  paddingTop:'10px',
-                  display:'flex',
-                  paddingRight:'80px'
-                  
-                
-                  
-               }}>
-                 {
-                  formData.days>0  ?  
-                   <BButton
+                paddingTop: '10px',
+                display: 'flex',
+                paddingRight: '80px'
+
+
+
+              }}>
+              {
+                formData.days > 0 ?
+                  <BButton
                     style={{
-                        width:'60%',
+                      width: '60%',
                     }}
-                    >{`$${price*formData.days}`}
-                  
-                     </BButton>
-                     
-                   :  
-                    
-                      <BButton
+                  >{`$${price * formData.days}`}
+
+                  </BButton>
+
+                  :
+
+                  <BButton
                     style={{
-                        width:'60%',
+                      width: '60%',
                     }}
-                    >{`$${price}`}
-                  
-                     </BButton>
-            
+                  >{`$${price}`}
 
-                 }
-            {formData.name && formData.add && formData.pin && formData.days  &&  <BButton  onClick={addDetails}>Check out</BButton>}
-
-            </div>
-      
-        
-         </div>
-              
-       </Wrapper>
+                  </BButton>
 
 
-        <Modal
-        style={{width:'80px',}}
-        title="Charge Bill"
-        visible={billChargeModal}
-        footer={false}
-        onCancel={() => setBillChargeModal(false)}
-      >
-        {" "}
-        
-      <h3 style={{
-        fontFamily:' "Source Sans Pro", sans-serif',
-            color: '#000d6b',
-          fontWeight: '600',
-    
-      }}>
-           Please Click on button below !!
-      </h3>
-      
-
-
-      
-
-
-   
-       <StripeCheckout
-        stripeKey="pk_test_4TbuO6qAW2XPuce1Q6ywrGP200NrDZ2233"
-         token={handleToken}
-        amount={product.price * 100}
-        name="Tesla Roadster"
-        billingAddress
-        shippingAddress
-        onClick={()=>setBillChargeModal(false)}
-        
-      />
-
-      
-        <BButton onClick={()=>setBillChargeModal(false)}> Close</BButton>
-     
-
-     
-         {" "}
-      </Modal>
-               
-    </Container>
-)
+              }
+              {formData.name && formData.add && formData.pin && formData.days && <BButton onClick={() => window.location.href = 'http://localhost:3000/payment'}>Check out</BButton>
 }
 
-export default Checkout;
+            </div>
+
+
+          </div>
+
+        </Wrapper>
+
+
+
+
+
+
+
+      </Container>
+    );
+  };
+
+  export default Checkout;

@@ -57,6 +57,12 @@ const navLinks = [
     path: "/price",
     display: "Price",
   },
+
+  {
+    path: "/chat",
+    display: "Chat",
+  },
+
   {
     path: "/contact",
     display: "Contact",

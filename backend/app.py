@@ -3,6 +3,8 @@ import numpy as np
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 from flask import Flask, send_from_directory
+import openai
+import gradio
 
 
 
@@ -12,6 +14,8 @@ from flask import Flask, send_from_directory
 
 app = Flask(__name__, static_folder="static")
 model = pickle.load(open("RandomForest.pkl", "rb"))
+# openai.api_key = "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"
+
 
 @app.route("/")
 def home():
@@ -50,6 +54,31 @@ def crop_prediction():
 
         
   
+# @app.route('/chat', methods=['POST'])
+# def chatbot_route():
+#     data = request.get_json()
+#     user_input = data.get('user_input')
+
+#     response = api_calling(user_input)
+    
+#     return jsonify({"response": response})
+
+# def api_calling(prompt):
+    # completions = openai.Completion.create(
+    #     engine="text-davinci-003",
+    #     prompt=prompt,
+    #     max_tokens=100,
+    #     n=1,
+    #     stop=None,
+    #     temperature=0.5,
+    # )
+    # message = completions.choices[0].text.strip()
+    # return message
+    
+    
+@app.route("/chat")
+def chat():
+    return render_template("chat.html")
 
 # if __name__ == "__main__":
 #     app.run(debug=True)

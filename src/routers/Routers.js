@@ -9,7 +9,9 @@ import BlogDetails from "../pages/BlogDetails";
 import NotFound from "../pages/NotFound";
 import Contact from "../pages/Contact";
 import Crop from "../pages/Crop";
+import Payment from "../pages/payment";
 import Price from "../pages/price";
+import Chat from "../pages/chat";
 import Fertilizer from "../pages/fertilizer";
 import Weather from "../pages/Weather";
 import Login from '../pages/Login';
@@ -33,6 +35,8 @@ const Routers = () => {
       <Route path="/blogs/:idd" element={<BlogDetails />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/Crop" element={<Crop />} />
+      <Route path="/Payment" element={<Payment />} />
+      <Route path="/Chat" element={<Chat />} />
       <Route path="/price" element={<Price />} />
       <Route path="/Fertilizer" element={<Fertilizer />} />
       <Route path="/Weather" element={<Weather />} />

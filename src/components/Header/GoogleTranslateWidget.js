@@ -16,7 +16,7 @@ const GoogleTranslateWidget = () => {
     };
   }, []);
 
-//   return <div id="google_element"></div>;
+  return <div id="google_element"></div>;
 };
 
 export default GoogleTranslateWidget;
