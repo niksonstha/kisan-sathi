@@ -115,16 +115,16 @@ const Contact = () => {
               <div style={{paddingLeft:'120px' , paddingTop:"26px"}} className="contact__info">
                 <h6 className="fw-bold">Contact Information</h6>
                 <p className="section__description mb-0">
-                    Akurdi, Pune
+                    Baluwatar, Kathmandu
                 </p>
                 <div className=" d-flex align-items-center gap-2">
                   <h6 className="fs-6 mb-0">Phone:</h6>
-                  <p className="section__description mb-0">9021423716</p>
+                  <p className="section__description mb-0">9801855236</p>
                 </div>
 
                 <div className=" d-flex align-items-center gap-2">
                   <h6 className="mb-0 fs-6">Email:</h6>
-                  <p className="section__description mb-0">gaikwadvipul196@gmail.com</p>
+                  <p className="section__description mb-0">kisansathi@gmail.com</p>
                 </div>
 
                 <h6 className="fw-bold mt-4">Follow Us</h6>

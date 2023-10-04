@@ -7,8 +7,8 @@ const blogData = [
   {
     id: 1,
     title: " Seed Drill – Things to keep in Mind for Use",
-    author: "Vipul",
-    date: "12 Dec, 2020",
+    author: "Rupal Bhandari",
+    date: "12 September, 2023",
     time: "9pm",
     imgUrl: img01,
     description:
@@ -19,8 +19,8 @@ const blogData = [
   {
     id: 2,
     title: "Most Common Farm Equipment In Farming",
-    author: "Arvind Vakte",
-    date: "23 April, 2022",
+    author: "Sanjay Thapa",
+    date: "23 August, 2023",
     time: "8.25pm",
     imgUrl: img02,
     description:
@@ -33,7 +33,7 @@ const blogData = [
     id: 3,
     title: "Combine harvester – a Multi-functional Farm Machinery",
     author: "Sanjay Pawar",
-    date: "12 July, 2022",
+    date: "12 August, 2023",
     time: "9pm",
     imgUrl: img03,
     description:

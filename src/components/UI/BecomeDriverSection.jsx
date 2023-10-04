@@ -27,8 +27,8 @@ const BecomeDriverSection = () => {
 
             {/* <button className="btn become__driver-btn mt-4"> */}
               
-                  <Link style={{background:'#fff', color:'#000d6b'}} to="/become-driver" className=" btn become__driver-btn mt-4" onClick={becomeDriver}>
-                  <i  class="ri-login-circle-line"></i>  Become a Driver
+                  <Link style={{background:'#fff', color:'#000d6b'}} to="/equipments" className=" btn become__driver-btn mt-4" onClick={becomeDriver}>
+                  <i  class="ri-login-circle-line"></i>  Come Join Us
                  </Link>
           
             {/* </button> */}

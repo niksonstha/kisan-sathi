@@ -20,8 +20,8 @@ const AboutSection = ({ aboutClass }) => {
               <h4  className="section__subtitle">About Us</h4>
               <h2 className="section__title">Welcome to Farming Equipment rent service</h2>
               <p  className="section__description">
-               Our purpose is to democratize technology for the farmer having small as well as land in large Scale. Our agendy or mission is to make India a nation of Champion Farmers .
-Famers power India and we empower farmers. Together we advance agriculture.We provide Farm Equipments Rentals to advance the productivity of your Farm. Farmers Can also Earn by giving their instruments, machinary on rent throught us. 
+               Our purpose is to democratize technology for the farmer having small as well as land in large Scale. Our agendy or mission is to make Nepal a nation of Champion Farmers .
+Famers power Nepal and we empower farmers. Together we advance agriculture.We provide Farm Equipments Rentals to advance the productivity of your Farm. Farmers Can also Earn by giving their instruments, machinary on rent throught us. 
 Through this a living body of partnerships of expertise and excellence coming together to serve every need of the farmer, using every opportunity to advance agriculture.
               </p>
 
@@ -31,13 +31,13 @@ Through this a living body of partnerships of expertise and excellence coming to
                 </p>
 
                 <p className="section__description d-flex align-items-center gap-2">
-                  <i class="ri-checkbox-circle-line"></i> Make India a nation of Champion Farmers
+                  <i class="ri-checkbox-circle-line"></i> Make Nepal a nation of Champion Farmers
                 </p>
               </div>
 
               <div style={{columnGap: '1rem'}} className="about__section-item d-flex align-items-center">
                 <p className="section__description d-flex align-items-center gap-2">
-                  <i class="ri-checkbox-circle-line"></i>Famers power India and we empower farmers.
+                  <i class="ri-checkbox-circle-line"></i>Famers power Nepal and we empower farmers.
                 </p>
 
                 <p className="section__description d-flex align-items-center gap-2">

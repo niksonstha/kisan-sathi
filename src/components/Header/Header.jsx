@@ -130,7 +130,7 @@ const Header = () => {
               <div className="header__top__left">
                 <span>Need Help?</span>
                 <span style={{color:'white'}} className="header__top__help">
-                  <i class="ri-phone-fill"></i> 9021423716
+                  <i class="ri-phone-fill"></i> 9801855236
                 </span>
               </div>
             </Col>
@@ -192,8 +192,8 @@ const Header = () => {
                   <i class="ri-earth-line"></i>
                 </span>
                 <div className="header__location-content">
-                  <h4>India</h4>
-                  <h6>Pune City, India</h6>
+                  <h4>Nepal</h4>
+                  <h6>Shantinagar, Nepal</h6>
                 </div>
               </div>
             </Col>
@@ -205,7 +205,7 @@ const Header = () => {
                 </span>
                 <div className="header__location-content">
                   <h4>Monday to Saturday</h4>
-                  <h6>10am - 7pm</h6>
+                  <h6>10am - 5pm</h6>
                 </div>
               </div>
             </Col>

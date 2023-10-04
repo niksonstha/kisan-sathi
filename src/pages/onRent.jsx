@@ -139,7 +139,7 @@ const New = ({ inputs }) => {
                   <input
                     id={input.id}
                     type={input.type}
-                    placeholder={input.placeholder}
+                    // placeholder={input.placeholder}
                     onChange={handleInput}
                   />
                 </div>

@@ -9,7 +9,7 @@ const Chatbot = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
-    const apiKey = "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"; // Replace this with your actual API key
+    const apiKey = "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"; // Replace this with your actual API key
 
     const apiUrl = 'https://api.openai.com/v1/chat/completions'; // Use the Chatbot API endpoint
 

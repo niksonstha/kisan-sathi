@@ -43,15 +43,14 @@ const Testimonial = () => {
     <Slider {...settings}>
       <div className="testimonial py-4 px-3">
         <p className="section__description">
-          Mr. Ashish Pawar , hails from Ahmednagar district of Maharashtra. 1 months ago, He rented a drip irrigation set for his crop.With the help and support from us he make it and ofcourse with his hard work. 
-          This is attributed towards good crop management practices like land preparation, seed selection, seed treatment.
-        </p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              </p>
 
         <div className="mt-3 d-flex align-items-center gap-4">
           <img src={ava01} alt="" className="w-25 h-25 rounded-2" />
 
           <div>
-            <h6 className="mb-0 mt-3">Ashish Pawar</h6>
+            <h6 className="mb-0 mt-3">Ashish Gautam</h6>
             <p className="section__description">Customer</p>
           </div>
         </div>
@@ -61,15 +60,14 @@ const Testimonial = () => {
         <p className="section__description">
          
 
-Hailing from Kopargaon village in Ahmednagar , Mr. Shivaji Jadhav is a progressive farmer who gives his machinary on rent via our site . 
-With this he generate revenue in off season also. He offer many machinary as tractors, cultivator and seeders etc.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
         </p>
 
         <div className="mt-3 d-flex align-items-center gap-4">
           <img src={ava02} alt="" className="w-25 h-25 rounded-2" />
 
           <div>
-            <h6 className="mb-0 mt-3">Shivaji Jadhav</h6>
+            <h6 className="mb-0 mt-3">Shivaji yadhav</h6>
             <p className="section__description">Customer</p>
           </div>
         </div>
@@ -77,16 +75,14 @@ With this he generate revenue in off season also. He offer many machinary as tra
 
       <div className="testimonial py-4 px-3">
         <p className="section__description">
-          Mr. Pandurag Waghmare , hails from wagholi Pune district of Maharashtra. 1 months ago, He rented sprinker  set for his crop. 
-          With the help our site support, at present, his soyabean crop is way nicely grown. This is attributed towards good crop management practices like land preparation, seed selection, 
-          seed treatment.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
         </p>
 
         <div className="mt-3 d-flex align-items-center gap-4">
           <img src={ava03} alt="" className="w-25 h-25 rounded-2" />
 
           <div>
-            <h6 className="mb-0 mt-3">Pandurag Waghmare</h6>
+            <h6 className="mb-0 mt-3">Pandurag maharjan</h6>
             <p className="section__description">Customer</p>
           </div>
         </div>
@@ -94,8 +90,7 @@ With this he generate revenue in off season also. He offer many machinary as tra
 
       <div className="testimonial py-4 px-3">
         <p className="section__description">
-            Mr. Suresh Yadav , is from Sinnar  Nashik district of Maharashtra 2 months ago, he had given his harvester on renting purpose. 
-          With the help our site support, at present he have earn lot more than he expected. He was very happy for having support from us.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
         </p>
 
         <div className="mt-3 d-flex align-items-center gap-4">
