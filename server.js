@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.send("Add your Stripe Secret Key to the .require('stripe') statement!");
+  res.send("Add your Stripe Secret Key to the .require('stripe') statemnt!");
 });
 
 app.post("/checkout", async (req, res) => {
