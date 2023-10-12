@@ -176,7 +176,7 @@ const Header = () => {
                 {/* <img src="./src/components/Header/logo192.png" alt="kisan sathi" /> */}
                 <Link to="/home" className=" d-flex align-items-center gap-2">
 
-                <img src={require('/home/sanjay/Documents/Working/Coding/farmer/kisan-sathi/src/components/Header/logo192.png')} alt="kisan sathi" style={{ width: '250px', height: 'auto' }} />
+                <img src={require('/home/sanjay/Documents/Working/Coding/farmer/kisan-sathi/src/components/Header/logo192.png')} alt="kisan sathi" style={{ width: '120px', height: '100px' }} />
                 </Link>
                 <h1 style={logoStyleh1}>
                   <Link to="/home" className=" d-flex align-items-center gap-2">
@@ -191,7 +191,7 @@ const Header = () => {
                 <span>
                   <i class="ri-earth-line"></i>
                 </span>
-                <div className="header__location-content">
+                <div className="header__location-content" >
                   <h4>Nepal</h4>
                   <h6>Shantinagar, Nepal</h6>
                 </div>
@@ -218,7 +218,7 @@ const Header = () => {
             >
               <button  className="header__btn btn ">
                 <Link to="/contact">
-                  <i style={{alignItems:"center"}} class="ri-phone-line"></i> Request a call
+                  <i style={{alignItems:"center"}} class="ri-phone-line"></i> Get in Touch
                 </Link>
               </button>
             </Col>
@@ -264,7 +264,7 @@ const Header = () => {
                 {/* <img src="./src/components/Header/logo192.png" alt="kisan sathi" /> */}
                 <Link to="/home" className=" d-flex align-items-center gap-2">
 
-                <img src={require('/home/sanjay/Documents/Working/Coding/farmer/kisan-sathi/src/components/Header/logo192.png')} alt="kisan sathi" style={{ width: '184px', height: 'auto', marginRight: '100px' }} />
+                <img src={require('/home/sanjay/Documents/Working/Coding/farmer/kisan-sathi/src/components/Header/logo192.png')} alt="kisan sathi" style={{ width: '100px', height: '100px', marginRight: '100px' }} />
                 </Link>
                 <h1 style={logoStyleh1}>
                   <Link to="/home" className=" d-flex align-items-center gap-2">

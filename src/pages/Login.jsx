@@ -19,16 +19,16 @@ const Container = styled.div`
       rgba(255, 255, 255, 0.7),
       rgba(80, 45, 45, 0.3)
     ),
-    url('https://img.krishijagran.com/media/54152/1601348576farmer.png');
-    /* url("https://images.pexels.com/photos/114979/pexels-photo-114979.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"); */
+    url('http://localhost:3000/static/media/Slider2.80ba793dbeee9aad8118.jpeg');
+    /* url("http://localhost:3000/static/media/Slider2.80ba793dbeee9aad8118.jpeg"); */
   background-size: cover;
   background-position: center;
 `;
 
 const Wrapper = styled.div`
-    height: 70%;
+    height: 50%;
     background-color: white;
-    padding: 0px 60px;
+    padding: 5px 60px;
     border-radius: 10px;
 `;
 
@@ -52,7 +52,7 @@ const Button = styled.button`
     font-size: 18px;
     cursor: pointer;
     margin-top: 15px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 `;
 
 
@@ -71,7 +71,7 @@ const Button = styled.button`
       {
         id :2,
         name:"password",
-        type:'text',
+        type:'password',
         errorMessage:"Password should 8-16 character long and include atleast 1 number,1 special character",
         placeholder:'Password',
         required:true,

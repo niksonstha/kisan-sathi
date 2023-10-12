@@ -235,7 +235,7 @@ const Checkout = () => {
 
             <label style={{ paddingTop: '10px' }}>No of days </label>
             <Input onChange={handleInput} id='days' placeholder='Number of days you want to rent the equipment'></Input>
-            {/* {`/equipments/${id}`} */}
+            {/* {`/equipments/Rs{id}`} */}
 
             <div style=
               {{
@@ -252,7 +252,7 @@ const Checkout = () => {
                     style={{
                       width: '60%',
                     }}
-                  >{`$${price * formData.days}`}
+                  >{`Rs${price * formData.days}`}
 
                   </BButton>
 
@@ -262,7 +262,7 @@ const Checkout = () => {
                     style={{
                       width: '60%',
                     }}
-                  >{`$${price}`}
+                  >{`Rs${price}`}
 
                   </BButton>
 

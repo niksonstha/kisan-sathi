@@ -41,10 +41,7 @@ const Footer = () => {
             <div className="logo footer__logo">
               <h1>
                 <Link to="/home" className=" d-flex align-items-center gap-2">
-                  <i class="ri-tools-line"></i>
-                  <span>
-                    Rent Farming Eqipment <br /> Service
-                  </span>
+                <img src={require('/home/sanjay/Documents/Working/Coding/farmer/kisan-sathi/src/components/Header/logo192.png')} alt="kisan sathi" style={{ width: '100px', height: '100px', marginRight: '100px' }} />
                 </Link>
               </h1>
             </div>

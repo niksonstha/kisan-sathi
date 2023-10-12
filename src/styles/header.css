@@ -12,16 +12,19 @@
     #mobileshow   { display:none; }
 }
 
+/* For screens wider than 768px */
 .logo1 img {
-  max-width: 100%;
+  max-width: 40%;
   height: auto;
-  @media (max-width: 768px) {
-    .logo1 img {
-      max-width: 80% !important;
-    }
-  }
-  
 }
+
+/* For screens up to 768px (mobile) */
+@media (max-width: 768px) {
+  .logo1 img {
+    max-width: 100% !important;  /* Use 100% to make it fill the container width */
+  }
+}
+
 
 .header__top__left {
   display: flex;
@@ -59,9 +62,19 @@
 
 /* ============ header middle style =========== */
 
-.header__middle {
+/* .header__middle {
   padding: 20px 0px;
+} */
+
+
+.header__middle {
+  display: flex; /* Use flexbox to align content vertically */
+  flex-direction: column; /* Stack content vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  height: 100%; /* Ensure the container takes up the full height of its parent */
 }
+
 
 .logo h1 a span {
   font-size: 1.5rem;
@@ -84,12 +97,22 @@
 .header__location span i {
   font-size: 2.2rem;
   color: #000d6b;
+ 
+
+
+  
 }
 
 .header__location-content h4 {
   font-size: 1.2rem;
   font-weight: 700;
   color: #000d6b;
+  display: flex; /* Use flexbox to align content vertically */
+  flex-direction: column; /* Stack content vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  height: 100%;
+  margin-top: 20px;
 }
 
 .header__location-content h6 {

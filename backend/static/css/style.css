@@ -3,6 +3,11 @@ h1{
     color : white;
     
 }
+
+.text-danger {
+    color: #2302a6!important;
+}
+
 .container {
     max-width: 600px;
     margin: 0 auto;
@@ -21,7 +26,7 @@ h1{
 }
 }
 h1{
-    color: white;
+    color: rgb(49, 2, 188);
 }
 h2{
     color:#333;
