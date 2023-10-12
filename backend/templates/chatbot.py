@@ -1,7 +1,7 @@
 import os
 import openai
 import gradio
-openai.api_key = "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"
+openai.api_key = "enter your api key"
 prompt = "Enter Your Query Here"
 def api_calling(prompt):
 	completions = openai.Completion.create(
