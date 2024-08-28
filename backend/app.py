@@ -8,10 +8,6 @@ import gradio
 
 
 
-
-
-
-
 app = Flask(__name__, static_folder="static")
 model = pickle.load(open("RandomForest.pkl", "rb"))
 # openai.api_key = "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"

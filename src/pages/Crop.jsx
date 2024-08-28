@@ -1,5 +1,5 @@
 import "../styles/contact.css";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 function IframeComponent({ onClose }) {
   return (
@@ -8,11 +8,9 @@ function IframeComponent({ onClose }) {
         src="http://localhost:5000/crop"
         frameBorder="0"
         id="iframe"
-        className="iframe-content" 
+        className="iframe-content"
       />
-      <button className="close-button" onClick={onClose}>
-        
-      </button>
+      <button className="close-button" onClick={onClose}></button>
     </div>
   );
 }
@@ -39,7 +37,7 @@ function App() {
         {/* You can remove the button to manually open the iframe */}
       </header>
       {iframeVisible && (
-        <div className="iframe-container"> 
+        <div className="iframe-container">
           <IframeComponent onClose={closeFrame} />
         </div>
       )}
@@ -48,6 +46,3 @@ function App() {
 }
 
 export default App;
-
-
-

@@ -1,10 +1,11 @@
-import React, { useRef,useContext } from "react";
+import React, { useRef, useContext } from "react";
 
 import { Container, Row, Col } from "reactstrap";
-import { Link, NavLink,Navigate } from "react-router-dom";
+import { Link, NavLink, Navigate } from "react-router-dom";
 import "../../styles/header.css";
 import swal from "sweetalert";
 import { AuthContext } from "../../context/AuthContext";
+import logo from "./logo192.png";
 
 // fetch('http://localhost:5000/api/route', {
 //     method: 'GET',  // Or 'POST', 'PUT', etc.
@@ -29,7 +30,6 @@ const navLinks = [
   {
     path: "/about",
     display: "About",
-    
   },
   {
     path: "/equipments",
@@ -37,11 +37,8 @@ const navLinks = [
   },
 
   {
-
     path: "/crop",
     display: "Crop",
-    
-    
   },
 
   {
@@ -67,56 +64,44 @@ const navLinks = [
     path: "/contact",
     display: "Contact",
   },
-
-  
 ];
 
+const handleLogin = () => {
+  <Navigate to="/login" replace={true} />;
+};
+const handleRegister = () => {
+  <Navigate to="/register" replace={true} />;
+};
 
+const handleGiveonRent = () => {
+  <Navigate to="/onrent" />;
+};
 
-
-
-const handleLogin=()=>{
-
-       <Navigate to="/login" replace={true} />
-  }
-const handleRegister=()=>{
-       <Navigate to="/register" replace={true} />
-}
-
-const handleGiveonRent=()=>{
-       <Navigate to="/onrent" />
-}
-
-const logoStyleh1={
-     lineHeight: '1.5rem'
-}
+const logoStyleh1 = {
+  lineHeight: "1.5rem",
+};
 
 const Header = () => {
+  const { dispatch } = useContext(AuthContext);
 
-   const {dispatch} =useContext(AuthContext);
+  const handleLogout = () => {
+    dispatch({ type: "LOGOUT" });
 
-  const handleLogout=()=>{
-     dispatch({type:'LOGOUT'})
-     
-               swal({
-                      title: "Logged Out!",
-                     text: "You Logged Out Sucessfullyy!",
-                     icon: "success",
-                     button: "Close!",
-                      });
-             
+    swal({
+      title: "Logged Out!",
+      text: "You Logged Out Sucessfullyy!",
+      icon: "success",
+      button: "Close!",
+    });
 
-     Navigate('/');
-  }
+    Navigate("/");
+  };
 
+  const { currentUser } = useContext(AuthContext);
 
-  const {currentUser}=useContext(AuthContext);
- 
   // console.log(currentUser);
 
   const menuRef = useRef(null);
-
-  
 
   const toggleMenu = () => menuRef.current.classList.toggle("menu__active");
 
@@ -129,40 +114,54 @@ const Header = () => {
             <Col lg="6" md="6" sm="6">
               <div className="header__top__left">
                 <span>Need Help?</span>
-                <span style={{color:'white'}} className="header__top__help">
+                <span style={{ color: "white" }} className="header__top__help">
                   <i class="ri-phone-fill"></i> 9801855236
                 </span>
               </div>
             </Col>
 
-           { currentUser==null && 
-             <Col lg="6" md="6" sm="6">
-              <div className="header__top__right d-flex align-items-center justify-content-end gap-3">
-                <Link to="/login" className=" d-flex align-items-center gap-1" onClick={handleLogin}>
-                  <i  class="ri-login-circle-line"></i> Login
-                </Link>
-
-                <Link to="/register" className=" d-flex align-items-center gap-1" onClick={handleRegister}>
-                  <i class="ri-user-line"></i> Register
-                </Link>
-              </div>
-            </Col>
-           }
-           {
-             currentUser!=null &&   
+            {currentUser == null && (
               <Col lg="6" md="6" sm="6">
-              <div className="header__top__right d-flex align-items-center justify-content-end gap-3">
-                <Link to="/onrent" className=" d-flex align-items-center gap-1" onClick={handleGiveonRent}>
-                  <i  class="ri-login-circle-line"></i> Give On Rent
-                </Link>
+                <div className="header__top__right d-flex align-items-center justify-content-end gap-3">
+                  <Link
+                    to="/login"
+                    className=" d-flex align-items-center gap-1"
+                    onClick={handleLogin}
+                  >
+                    <i class="ri-login-circle-line"></i> Login
+                  </Link>
 
-                <Link to="/register" className=" d-flex align-items-center gap-1" onClick={handleLogout}>
-                  <i class="ri-user-line"></i> Logout
-                </Link>
-              </div>
-            </Col>
-           }
-            
+                  <Link
+                    to="/register"
+                    className=" d-flex align-items-center gap-1"
+                    onClick={handleRegister}
+                  >
+                    <i class="ri-user-line"></i> Register
+                  </Link>
+                </div>
+              </Col>
+            )}
+            {currentUser != null && (
+              <Col lg="6" md="6" sm="6">
+                <div className="header__top__right d-flex align-items-center justify-content-end gap-3">
+                  <Link
+                    to="/onrent"
+                    className=" d-flex align-items-center gap-1"
+                    onClick={handleGiveonRent}
+                  >
+                    <i class="ri-login-circle-line"></i> Give On Rent
+                  </Link>
+
+                  <Link
+                    to="/register"
+                    className=" d-flex align-items-center gap-1"
+                    onClick={handleLogout}
+                  >
+                    <i class="ri-user-line"></i> Logout
+                  </Link>
+                </div>
+              </Col>
+            )}
           </Row>
         </Container>
       </div>
@@ -172,16 +171,20 @@ const Header = () => {
         <Container>
           <Row>
             <Col lg="4" md="3" sm="4">
-              <div className="logo1" >
+              <div className="logo1">
                 {/* <img src="./src/components/Header/logo192.png" alt="kisan sathi" /> */}
                 <Link to="/home" className=" d-flex align-items-center gap-2">
-
-                <img src={require('/home/sanjay/Documents/Working/Coding/farmer/kisan-sathi/src/components/Header/logo192.png')} alt="kisan sathi" style={{ width: '250px', height: 'auto' }} />
+                  <img
+                    src={logo}
+                    alt="kisan sathi"
+                    style={{ width: "250px", height: "auto" }}
+                  />
                 </Link>
                 <h1 style={logoStyleh1}>
-                  <Link to="/home" className=" d-flex align-items-center gap-2">
-                    
-                  </Link>
+                  <Link
+                    to="/home"
+                    className=" d-flex align-items-center gap-2"
+                  ></Link>
                 </h1>
               </div>
             </Col>
@@ -216,9 +219,10 @@ const Header = () => {
               sm="3"
               className=" d-flex align-items-center justify-content-end "
             >
-              <button  className="header__btn btn ">
+              <button className="header__btn btn ">
                 <Link to="/contact">
-                  <i style={{alignItems:"center"}} class="ri-phone-line"></i> Request a call
+                  <i style={{ alignItems: "center" }} class="ri-phone-line"></i>{" "}
+                  Request a call
                 </Link>
               </button>
             </Col>
@@ -259,20 +263,28 @@ const Header = () => {
                 </span>
               </div>
             </div> */}
-           
-          <div className="logo2" id="mobileshow">
-                {/* <img src="./src/components/Header/logo192.png" alt="kisan sathi" /> */}
-                <Link to="/home" className=" d-flex align-items-center gap-2">
 
-                <img src={require('/home/sanjay/Documents/Working/Coding/farmer/kisan-sathi/src/components/Header/logo192.png')} alt="kisan sathi" style={{ width: '184px', height: 'auto', marginRight: '100px' }} />
-                </Link>
-                <h1 style={logoStyleh1}>
-                  <Link to="/home" className=" d-flex align-items-center gap-2">
-                    
-                  </Link>
-                </h1>
-              </div>
-              </div> 
+            <div className="logo2" id="mobileshow">
+              {/* <img src="./src/components/Header/logo192.png" alt="kisan sathi" /> */}
+              <Link to="/home" className=" d-flex align-items-center gap-2">
+                <img
+                  src={logo}
+                  alt="kisan sathi"
+                  style={{
+                    width: "184px",
+                    height: "auto",
+                    marginRight: "100px",
+                  }}
+                />
+              </Link>
+              <h1 style={logoStyleh1}>
+                <Link
+                  to="/home"
+                  className=" d-flex align-items-center gap-2"
+                ></Link>
+              </h1>
+            </div>
+          </div>
         </Container>
       </div>
     </header>
